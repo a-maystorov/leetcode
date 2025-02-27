@@ -1,32 +1,36 @@
 /**
  * 121. Best Time to Buy and Sell Stock
- * ------------------------------------
- * You are given an array prices where prices[i] represents the price of a given
- * stock on the ith day.
+ * 
+ * Determines the maximum profit achievable from a single stock transaction
+ * given daily prices.
+ * 
+ * Given an array of integers prices where prices[i] represents the stock price
+ * on the ith day,
+ * this method calculates the maximum profit possible by buying the stock on one
+ * day and selling
+ * it on a later day. The transaction must follow chronological order (buy
+ * before sell). If no
+ * profit can be achieved, returns 0.
  *
- * Your goal is to maximize your profit by choosing a single day to buy one
- * stock and
- * a different day in the future to sell that stock.
- *
- * Return the maximum profit that can be achieved from this transaction.
- * If no profit can be made, return 0.
- *
- * Example 1:
- * Input: prices = [7,1,5,3,6,4]
+ * Examples:
+ * 1. Input: prices = [7,1,5,3,6,4]
  * Output: 5
- * Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6),
- * profit = 6 - 1 = 5.
- * Note: Buying on day 2 and selling on day 1 is not allowed, as you must buy
- * before selling.
- *
- * Example 2:
- * Input: prices = [7,6,4,3,1]
+ * Explanation: Buy on day 2 (price = 1), sell on day 5 (price = 6), profit = 6
+ * - 1 = 5.
+ * Selling before buying (e.g., day 1 to day 2) is not permitted.
+ * 
+ * 2. Input: prices = [7,6,4,3,1]
  * Output: 0
- * Explanation: No profitable transaction is possible, so max profit = 0.
+ * Explanation: Prices decrease continuously, making profitable transactions
+ * impossible.
  *
  * Constraints:
- * - 1 <= prices.length <= 10^5
- * - 0 <= prices[i] <= 10^4
+ * - Array length: 1 <= prices.length <= 10^5
+ * - Price range: 0 <= prices[i] <= 10^4
+ *
+ * @param prices array of integers representing daily stock prices
+ * @return maximum profit achievable from one buy-sell transaction, or 0 if no
+ *         profit possible
  */
 
 public class MaxProfit {

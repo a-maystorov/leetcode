@@ -2,25 +2,35 @@ import java.util.Arrays;
 
 /**
  * 283. Move Zeroes
- * Given an integer array nums, move all zeroes to the end of the array
- * while maintaining the relative order of the non-zero elements.
+ * 
+ * Rearranges an integer array by moving all zeroes to the end while preserving
+ * the relative order
+ * of non-zero elements.
+ * 
+ * Given an integer array nums, this method shifts all zeroes to the end of the
+ * array in-place,
+ * maintaining the original order of non-zero elements. The operation must
+ * modify the input array
+ * directly without creating a copy.
  *
- * Note: This must be done in-place without making a copy of the array.
- *
- * Example 1:
- * Input: nums = [0,1,0,3,12]
+ * Examples:
+ * 1. Input: nums = [0,1,0,3,12]
  * Output: [1,3,12,0,0]
- *
- * Example 2:
- * Input: nums = [0]
+ * Explanation: Non-zero elements (1,3,12) retain their order, zeroes moved to
+ * the end.
+ * 
+ * 2. Input: nums = [0]
  * Output: [0]
+ * Explanation: Single-element array remains unchanged as it’s already a zero.
  *
  * Constraints:
- * - 1 <= nums.length <= 10^4
- * - -2^31 <= nums[i] <= 2^31 - 1
+ * - Array length: 1 <= nums.length <= 10^4
+ * - Element range: -2^31 <= nums[i] <= 2^31 - 1
  *
- * Follow-up:
- * Can you minimize the total number of operations performed?
+ * Follow-up: Consider optimizing the solution to minimize the total number of
+ * operations.
+ *
+ * @param nums integer array to be modified in-place
  */
 
 public class MoveZeroes {
