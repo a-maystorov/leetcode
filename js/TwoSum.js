@@ -3,6 +3,8 @@
  */
 class TwoSum {
   /**
+   * 1. Two Sum
+   *
    * Finds the indices of two numbers in an array that add up to a target value.
    *
    * @param {number[]} nums - Array of integers to search through.
@@ -26,13 +28,30 @@ class TwoSum {
    * - Only one valid solution exists.
    */
   static solution(nums, target) {
-    for (const i = 0; i < nums.length; i++) {
-      for (const j = i + 1; j < nums.length; j++) {
-        if (nums[j] + nums[i] === target) {
-          return [i, j];
-        }
-      }
+    if (!Array.isArray(nums) || nums.length < 2 || nums.length > 10e4) {
+      throw new Error("Invalid array length");
     }
+
+    if (target < -10e9 || target > 10e9) {
+      throw new Error("Target value out of bounds");
+    }
+
+    const hash = new Map();
+
+    for (let i = 0; i < nums.length; i++) {
+      if (nums[i] < -10e9 || nums[i] > 10e9) {
+        throw new Error("Array value out of bounds");
+      }
+
+      const complement = target - nums[i];
+
+      if (hash.has(complement)) {
+        return [hash.get(complement), i];
+      }
+
+      hash.set(nums[i], i);
+    }
+
     throw new Error("No valid solution exists");
   }
 }
