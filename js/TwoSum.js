@@ -56,4 +56,7 @@ class TwoSum {
   }
 }
 
-export default TwoSum;
+// Test cases
+console.log("Test 1:", TwoSum.solution([2, 7, 11, 15], 9)); // Expected: [0, 1]
+console.log("Test 2:", TwoSum.solution([3, 2, 4], 6)); // Expected: [1, 2]
+console.log("Test 3:", TwoSum.solution([3, 3], 6)); // Expected: [0, 1]

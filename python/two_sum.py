@@ -44,3 +44,19 @@ class TwoSum:
                 if nums[i] + nums[j] == target:
                     return [i, j]
         return []
+    
+    # Test cases
+if __name__ == "__main__":
+    ts = TwoSum()
+    
+    # Test case 1
+    result1 = ts.solution([2, 7, 11, 15], 9)
+    print(f"Test 1: {result1}")  # Expected: [0, 1]
+    
+    # Test case 2
+    result2 = ts.solution([3, 2, 4], 6)
+    print(f"Test 2: {result2}")  # Expected: [1, 2]
+    
+    # Test case 3
+    result3 = ts.solution([3, 3], 6)
+    print(f"Test 3: {result3}")  # Expected: [0, 1]
