@@ -41,7 +41,7 @@ import java.util.Map;
  * @return list of grouped anagram lists
  */
 public class GroupAnagrams2 {
-    public List<List<String>> groupAnagrams(String[] strs) {
+    public List<List<String>> solution(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
 
         for (String word : strs) {
