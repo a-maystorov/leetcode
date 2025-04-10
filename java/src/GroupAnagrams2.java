@@ -42,16 +42,18 @@ import java.util.Map;
  */
 public class GroupAnagrams2 {
     public List<List<String>> solution(String[] strs) {
-        Map<String, List<String>> map = new HashMap<>();
+        Map<String, List<String>> res = new HashMap<>();
 
-        for (String word : strs) {
-            char[] chars = word.toCharArray();
-            Arrays.sort(chars);
-            String key = new String(chars);
-
-            map.computeIfAbsent(key, k -> new ArrayList<>()).add(word);
+        for (String s : strs) {
+            int[] count = new int[26]; // Count occurrences of each letter
+            for (char c : s.toCharArray()) {
+                count[c - 'a']++;
+            }
+            String key = Arrays.toString(count); // Use frequency array as a unique key
+            res.putIfAbsent(key, new ArrayList<>());
+            res.get(key).add(s);
         }
 
-        return new ArrayList<>(map.values());
+        return new ArrayList<>(res.values());
     }
 }
