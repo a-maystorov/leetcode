@@ -40,20 +40,26 @@ import java.util.Map;
  * @param strs array of input strings
  * @return list of grouped anagram lists
  */
-public class GroupAnagrams2 {
-    public List<List<String>> solution(String[] strs) {
-        Map<String, List<String>> res = new HashMap<>();
+class GroupAnagrams2 {
+    public static List<List<String>> solution(String[] strs) {
+        Map<String, List<String>> map = new HashMap<>();
 
         for (String s : strs) {
-            int[] count = new int[26]; // Count occurrences of each letter
-            for (char c : s.toCharArray()) {
-                count[c - 'a']++;
+            char[] chars = s.toCharArray();
+            Arrays.sort(chars);
+            String key = new String(chars);
+            if (!map.containsKey(key)) {
+                map.put(key, new ArrayList<>());
             }
-            String key = Arrays.toString(count); // Use frequency array as a unique key
-            res.putIfAbsent(key, new ArrayList<>());
-            res.get(key).add(s);
+            map.get(key).add(s);
         }
 
-        return new ArrayList<>(res.values());
+        return new ArrayList<>(map.values());
+    }
+
+    public static void main(String[] args) {
+        String[] input = { "eat", "tea", "tan", "ate", "nat", "bat" };
+        List<List<String>> output = solution(input);
+        System.out.println(output);
     }
 }
